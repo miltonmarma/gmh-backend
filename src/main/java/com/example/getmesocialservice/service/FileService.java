@@ -20,7 +20,7 @@ public class FileService {
 
         BasicAWSCredentials credentials = new BasicAWSCredentials("AKIA4E37VXBOYFBZBIPM","izSWjQRLKQ7JoZb0lX6orKuCF6e7TtADOXhdBica");
 
-        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_1).build();
+        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_2).build();
         try {
             ObjectMetadata metadata = new ObjectMetadata();
             metadata.setContentLength(file.getSize());
@@ -35,14 +35,14 @@ public class FileService {
 
     public S3Object getFile(String key){
         BasicAWSCredentials credentials = new BasicAWSCredentials("AKIA4E37VXBOYFBZBIPM","izSWjQRLKQ7JoZb0lX6orKuCF6e7TtADOXhdBica");
-        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_1).build();
+        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_2).build();
 
         return s3.getObject("backend-a5",key);
     }
 
     public void deleteFile(String key){
         BasicAWSCredentials credentials = new BasicAWSCredentials("AKIA4E37VXBOYFBZBIPM","izSWjQRLKQ7JoZb0lX6orKuCF6e7TtADOXhdBica");
-        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_1).build();
+        final AmazonS3 s3 = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(credentials)).withRegion(Regions.US_EAST_2).build();
         s3.deleteObject("backend-a5",key);
 
     }
