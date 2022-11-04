@@ -1,17 +1,22 @@
 package com.example.getmesocialservice.model;
 
+import javax.validation.constraints.*;
+
 public class User {
 
+    private int id;
     private String name;
-    private String address;
-    private int age;
-    private String profilePicUrl;
 
-    public User(String name, String address, int age, String profilePicUrl) {
+    @Email
+    private String email;
+    @NotEmpty
+    private String profilePhotoUrl;
+
+    public User(String name, String email, int id, String profilePhotoUrl) {
         this.name = name;
-        this.address = address;
-        this.age = age;
-        this.profilePicUrl = profilePicUrl;
+        this.email = email;
+        this.id = id;
+        this.profilePhotoUrl = profilePhotoUrl;
     }
 
     public String getName() {
@@ -22,27 +27,27 @@ public class User {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getemail() {
+        return email;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setemail(String email) {
+        this.email = email;
     }
 
-    public int getAge() {
-        return age;
+    public int getId() {
+        return id;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProfilePicUrl() {
-        return profilePicUrl;
+    public String getProfilePhotoUrl() {
+        return profilePhotoUrl;
     }
 
-    public void setProfilePicUrl(String profilePicUrl) {
-        this.profilePicUrl = profilePicUrl;
+    public void setProfilePhotoUrl(String profilePhotoUrl) {
+        this.profilePhotoUrl = profilePhotoUrl;
     }
 }
