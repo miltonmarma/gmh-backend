@@ -4,7 +4,7 @@ import javax.validation.constraints.*;
 
 public class User {
 
-    private int id;
+    private String id;
     private String name;
 
     @Email
@@ -12,7 +12,7 @@ public class User {
     @NotEmpty
     private String profilePhotoUrl;
 
-    public User(String name, String email, int id, String profilePhotoUrl) {
+    public User(String name, String email, String id, String profilePhotoUrl) {
         this.name = name;
         this.email = email;
         this.id = id;
@@ -35,11 +35,11 @@ public class User {
         this.email = email;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

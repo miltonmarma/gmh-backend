@@ -12,12 +12,11 @@ public class UserRepository {
     List<User> userList = new ArrayList();
 
     public User getUser(){
-        User user = new User( "Tom","example@hotmail.com", 0, "ExampleURL");
+        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
         return user;
     }
 
     public User saveUser(User user) {
-        user.setId(userList.size()+1);
             userList.add(user);
             return user;
     }
@@ -28,7 +27,7 @@ public class UserRepository {
 
     public User getUserById(int id) {
         for(User user: userList){
-            if(user.getId() == id){
+            if(user.getId().equals(id)){
                 return user;
             }
         }
@@ -37,7 +36,7 @@ public class UserRepository {
 
     public User updateUser(int id, User user) {
         for(User u:userList){
-            if(u.getId() == id){
+            if(u.getId().equals(id)){
                 u.setName(user.getName());
                 u.setemail(user.getemail());
                 u.setProfilePhotoUrl(user.getProfilePhotoUrl());
@@ -52,7 +51,7 @@ public class UserRepository {
         User deletedUser = null;
 
         for(User u:userList){
-            if(u.getId() == id){
+            if(u.getId().equals(id)){
                 deletedUser = u;
                 userList.remove(u);
                 return deletedUser;
