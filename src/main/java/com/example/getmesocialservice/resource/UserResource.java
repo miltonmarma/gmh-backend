@@ -31,20 +31,9 @@ public class UserResource {
     private FirebaseService firebaseService;
 
     @PostMapping("/user")
-    public User saveUser(@RequestBody @Valid User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
+    public User saveUser(@RequestBody @Valid User user)
     {
-
-        firebaseUser firebaseUser = firebaseService.authenticate(idToken);
-
-        if(firebaseUser != null){
-            return userService.saveUser(user);
-        }
-
-        if(user.getName().equals("root")){
-            throw new exception();
-        }
-
-        return null;
+        return userService.saveUser(user);
     }
 
 
