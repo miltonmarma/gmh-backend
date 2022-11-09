@@ -30,7 +30,7 @@ public class UserResource {
     @Autowired
     private FirebaseService firebaseService;
 
-    @PostMapping("/user")
+    @PostMapping("/user/register")
     public User saveUser(@RequestBody @Valid User user)
     {
         return userService.saveUser(user);
