@@ -50,12 +50,12 @@ public class UserResource {
     }
 
     @GetMapping("/user/{id}")
-    public User getUserById(@PathVariable("id") int id){
+    public User getUserById(@PathVariable("id") String id){
         return userService.getUserById(id);
     }
 
     @PutMapping("/user/{id}")
-    public User updateUser(@PathVariable("id") int id, @RequestBody User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
+    public User updateUser(@PathVariable("id") String id, @RequestBody User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
     {
         firebaseUser firebaseUser = firebaseService.authenticate(idToken);
 

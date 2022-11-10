@@ -36,7 +36,7 @@ public class AlbumResource {
     }
 
     @GetMapping("/album/{id}")
-    public Album getAlbumById(@PathVariable("id") int id){
+    public Album getAlbumById(@PathVariable("id") String id){
         return albumService.getAlbumById(id);
     }
 
@@ -53,7 +53,7 @@ public class AlbumResource {
     }
 
     @DeleteMapping("/album")
-    public Album deleteAlbum(@RequestParam(name="id") int id, @RequestBody User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
+    public Album deleteAlbum(@RequestParam(name="id") String id, @RequestBody User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
     {
         firebaseUser firebaseUser = firebaseService.authenticate(idToken);
 

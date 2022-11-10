@@ -3,14 +3,14 @@ package com.example.getmesocialservice.model;
 import com.example.getmesocialservice.validation.*;
 
 public class Photo {
-    private int id;
-    private int albumId;
+    private String id;
+    private String albumId;
     private String photoUrl;
     @ValidCreatedBy
     private String createdBy;
     private String dateCreated;
 
-    public Photo(int id, int albumId, String photoUrl, String createdBy, String dateCreated) {
+    public Photo(String id, String albumId, String photoUrl, String createdBy, String dateCreated) {
         this.id = id;
         this.albumId = albumId;
         this.photoUrl = photoUrl;
@@ -18,19 +18,19 @@ public class Photo {
         this.dateCreated = dateCreated;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getAlbumId() {
+    public String getAlbumId() {
         return albumId;
     }
 
-    public void setAlbumId(int albumId) {
+    public void setAlbumId(String albumId) {
         this.albumId = albumId;
     }
 

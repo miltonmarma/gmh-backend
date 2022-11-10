@@ -7,7 +7,7 @@ import javax.validation.constraints.*;
 
 public class Album {
 
-    private int id;
+    private String id;
 //    @Length(max = 10)
     private String name;
 
@@ -16,7 +16,7 @@ public class Album {
     private String coverPhotoUrl;
     private String dateCreated;
 
-    public Album(int id, String name, String createdBy, String coverPhotoUrl, String dateCreated) {
+    public Album(String id, String name, String createdBy, String coverPhotoUrl, String dateCreated) {
         this.id = id;
         this.name = name;
         this.createdBy = createdBy;
@@ -40,11 +40,11 @@ public class Album {
         this.dateCreated = dateCreated;
     }
 
-    public int getid() {
+    public String getid() {
         return id;
     }
 
-    public void setid(int id) {
+    public void setid(String id) {
         this.id = id;
     }
 

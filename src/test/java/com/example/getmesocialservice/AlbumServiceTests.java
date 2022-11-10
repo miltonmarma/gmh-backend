@@ -20,18 +20,18 @@ class AlbumServiceTests {
 
     @Before
     public void saveAlbum(){
-        albumService.saveAlbum(new Album(1,"Tom","Tom","PhotoURL","Now"));
+        albumService.saveAlbum(new Album("1","Tom","Tom","PhotoURL","Now"));
     }
 
     @Test
     public void getAlbum(){
-        Album album = albumService.getAlbumById(1);
+        Album album = albumService.getAlbumById("1");
         assertEquals("Tom",album.getName());
     }
 
     @Test
     public void editAlbum() {
-        Album album = albumService.getAlbumById(1);
+        Album album = albumService.getAlbumById("1");
         album.setName("Bob");
         albumService.saveAlbum(album);
 

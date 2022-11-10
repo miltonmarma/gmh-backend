@@ -25,11 +25,11 @@ public class UserService {
         return userRepository.getAllUsers();
     }
 
-    public User getUserById(int id) {
+    public User getUserById(String id) {
         return userRepository.getUserById(id);
     }
 
-    public User updateUser(int id, User user) {
+    public User updateUser(String id, User user) {
         return userRepository.updateUser(id,user);
     }
 

@@ -11,18 +11,17 @@ import java.util.List;
 public class AlbumRepository {
 
     List<Album> albumList = new ArrayList<>(List.of(
-            new Album(1,"Disco Tex", "Tex Cauffield", "https://www.placecage.com/g/200/300","1976"),
-            new Album(2,"Disco Rex 2", "Rex Cauffield", "https://www.placecage.com/g/200/300","2004"),
-            new Album(3,"Disco Lex 3", "Lex Luthor", "https://www.placecage.com/g/200/300","1933")
+            new Album("1","Disco Tex", "Tex Cauffield", "https://www.placecage.com/g/200/300","1976"),
+            new Album("2","Disco Rex 2", "Rex Cauffield", "https://www.placecage.com/g/200/300","2004"),
+            new Album("3","Disco Lex 3", "Lex Luthor", "https://www.placecage.com/g/200/300","1933")
     ));
 
     public Album getAlbum(){
-        Album album = new Album( 0,"Disco Tex", "Tex Cauffield", "AlbumExampleURL","1976");
+        Album album = new Album("0","Disco Tex", "Tex Cauffield", "AlbumExampleURL","1976");
         return album;
     }
 
     public Album saveAlbum(Album album) {
-        album.setid(albumList.size()+1);
         albumList.add(album);
         return album;
     }
@@ -31,7 +30,7 @@ public class AlbumRepository {
         return albumList;
     }
 
-    public Album getAlbumById(int id) {
+    public Album getAlbumById(String id) {
         for(Album album: albumList){
             if(album.getid() == id){
                 return album;
@@ -54,7 +53,7 @@ public class AlbumRepository {
 //        return null;
 //    }
 
-    public Album deleteAlbum(int albumId) {
+    public Album deleteAlbum(String albumId) {
         Album deletedAlbum = null;
 
         for(Album u:albumList){

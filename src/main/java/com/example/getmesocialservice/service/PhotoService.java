@@ -23,11 +23,11 @@ public class PhotoService {
 
     public List<Photo> getAllPhotos(){return photoRepository.getAllPhotos();}
 
-    public Photo getPhotoById(int id) {
+    public Photo getPhotoById(String id) {
         return photoRepository.getPhotoById(id);
     }
 
-    public Photo deletePhoto(int id) {
+    public Photo deletePhoto(String id) {
         return photoRepository.deletePhoto(id);
     }
 }

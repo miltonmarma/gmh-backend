@@ -12,19 +12,19 @@ public class PhotoRepository {
     List<Photo> photoList = new ArrayList();
 
     public Photo getPhoto(){
-        Photo photo = new Photo(0,0,"PhotoExampleURL","Photo Creator","2021");
+        Photo photo = new Photo("0","0","PhotoExampleURL","Photo Creator","2021");
         return photo;
     }
 
     public Photo savePhoto(Photo photo) {
-        photo.setId(photoList.size() +1);
+//        photo.setId(photoList.size() +1);
         photoList.add(photo);
         return photo;
     }
 
     public List<Photo> getAllPhotos() {return photoList;}
 
-    public Photo getPhotoById(int id) {
+    public Photo getPhotoById(String id) {
         for(Photo photo:photoList){
             if(photo.getId() == id){
                 return photo;
@@ -33,7 +33,7 @@ public class PhotoRepository {
         return null;
     }
 
-    public Photo deletePhoto(int id) {
+    public Photo deletePhoto(String id) {
         Photo deletedPhoto = null;
 
         for(Photo p:photoList){

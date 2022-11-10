@@ -25,7 +25,7 @@ public class UserRepository {
         return userList;
     }
 
-    public User getUserById(int id) {
+    public User getUserById(String id) {
         for(User user: userList){
             if(user.getId().equals(id)){
                 return user;
@@ -34,7 +34,7 @@ public class UserRepository {
         return null;
     }
 
-    public User updateUser(int id, User user) {
+    public User updateUser(String id, User user) {
         for(User u:userList){
             if(u.getId().equals(id)){
                 u.setName(user.getName());

@@ -35,7 +35,7 @@ public class PhotoResource {
     }
 
     @GetMapping("/photo/{id}")
-    public Photo getPhotoById(@PathVariable("id") int id) {
+    public Photo getPhotoById(@PathVariable("id") String id) {
         return photoService.getPhotoById(id);
     }
 
@@ -50,7 +50,7 @@ public class PhotoResource {
     }
 
     @DeleteMapping("/photo")
-    public Photo deletePhoto(@RequestParam(name = "id") int id, @RequestBody User user, @RequestHeader(name = "idToken") String idToken) throws exception, FirebaseAuthException, IOException {
+    public Photo deletePhoto(@RequestParam(name = "id") String id, @RequestBody User user, @RequestHeader(name = "idToken") String idToken) throws exception, FirebaseAuthException, IOException {
 
         firebaseUser firebaseUser = firebaseService.authenticate(idToken);
 
