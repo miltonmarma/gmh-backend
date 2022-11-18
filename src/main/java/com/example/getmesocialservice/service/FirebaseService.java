@@ -4,13 +4,14 @@ package com.example.getmesocialservice.service;
 import java.io.IOException;
 
 import com.example.getmesocialservice.model.firebaseUser;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+//import com.sun.org.apache.xerces.internal.impl.xs.identity.XPathMatcher;
 import org.springframework.stereotype.Service;
 
 @Service
 public class FirebaseService {
-
 
     public firebaseUser authenticate (String idToken) throws IOException, FirebaseAuthException{
 

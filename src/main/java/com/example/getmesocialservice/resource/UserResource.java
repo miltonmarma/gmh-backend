@@ -5,6 +5,8 @@ import com.example.getmesocialservice.Exception.exception;
 import com.example.getmesocialservice.model.User;
 import com.example.getmesocialservice.model.firebaseUser;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.ListUsersPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +39,11 @@ public class UserResource {
         return userService.saveUser(user);
     }
 
+    @GetMapping("/firebase-users")
+    public ListUsersPage getFirebaseUser() throws FirebaseAuthException {
+        ListUsersPage page = FirebaseAuth.getInstance().listUsers(null);
+        return page;
+    }
 
     @GetMapping("/user")
     public User getUser(){

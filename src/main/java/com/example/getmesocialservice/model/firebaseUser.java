@@ -1,10 +1,15 @@
 package com.example.getmesocialservice.model;
 
+
+import com.google.firebase.auth.ListUsersPage;
+
 public class firebaseUser {
 
     private String uid;
     private String name;
     private String email;
+
+    private com.google.firebase.auth.ListUsersPage ListUsersPage;
 
     public firebaseUser(String uid, String name, String email) {
         this.uid = uid;
@@ -12,6 +17,8 @@ public class firebaseUser {
         this.email = email;
     }
 
+
+    public ListUsersPage getListUsers(){return ListUsersPage;}
 
     public String getUid(){
         return uid;
