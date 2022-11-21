@@ -20,12 +20,12 @@ public class UserRepository {
     }
 
     public User getUser(){
-//        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
+        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
         return user;
     }
 
     public User saveUser(User user) {
-//             user.setUserId(userList.size()+1);
+            //user.setUserId(userList.size()+1);
             userList.add(user);
             return user;
     }
