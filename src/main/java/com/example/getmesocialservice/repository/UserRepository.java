@@ -13,21 +13,6 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-//     Start listing users from the beginning, 1000 at a time.
-//    ListUsersPage page = FirebaseAuth.getInstance().listUsers(null);
-//    while(page != null) {
-//        for (ExportedUserRecord user : page.getValues()) {
-//            System.out.println("User: " + user.getUid());
-//        }
-//        //page = page.getNextPage();
-//    }
-//
-//// Iterate through all users. This will still retrieve users in batches,
-//// buffering no more than 1000 users in memory at a time.
-//    page = FirebaseAuth.getInstance().listUsers(null);
-//for (ExportedUserRecord user : page.iterateAll()) {
-//        System.out.println("User: " + user.getUid());
-//    }
     List<User> userList = new ArrayList();
 
 
@@ -35,11 +20,12 @@ public class UserRepository {
     }
 
     public User getUser(){
-        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
+//        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
         return user;
     }
 
     public User saveUser(User user) {
+//             user.setUserId(userList.size()+1);
             userList.add(user);
             return user;
     }

@@ -51,7 +51,7 @@ public class UserResource {
 
     }
 
-    @GetMapping("/users")
+    @GetMapping("/allUsers")
     public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
