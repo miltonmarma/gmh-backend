@@ -20,7 +20,7 @@ public class UserRepository {
     }
 
     public User getUser(){
-        User user = new User( "Tom","example@hotmail.com", "0", "ExampleURL");
+        User user = userList.get(userList.size()-1);
         return user;
     }
 

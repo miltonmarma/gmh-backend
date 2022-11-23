@@ -12,7 +12,7 @@ public class CommentRepository {
     List<Comment> commentList = new ArrayList();
 
     public Comment getComment(){
-        Comment comment = new Comment(0,0,"Sample Message","Sample Creator","2021");
+        Comment comment = commentList.get(commentList.size()-1);
         return comment;
     }
 

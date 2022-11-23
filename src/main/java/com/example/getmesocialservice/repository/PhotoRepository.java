@@ -12,7 +12,7 @@ public class PhotoRepository {
     List<Photo> photoList = new ArrayList();
 
     public Photo getPhoto(){
-        Photo photo = new Photo("0","0","PhotoExampleURL","Photo Creator","2021");
+        Photo photo = photoList.get(photoList.size()-1);
         return photo;
     }
 

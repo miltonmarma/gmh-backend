@@ -17,7 +17,7 @@ public class AlbumRepository {
     ));
 
     public Album getAlbum(){
-        Album album = new Album("0","Disco Tex", "Tex Cauffield", "AlbumExampleURL","1976");
+        Album album = albumList.get(albumList.size()-1);
         return album;
     }
 
@@ -47,6 +47,7 @@ public class AlbumRepository {
                 a.setCoverPhotoUrl(album.getCoverPhotoUrl());
                 a.setDateCreated(album.getDateCreated());
 
+                saveAlbum(a);
                 return a;
             }
         }
