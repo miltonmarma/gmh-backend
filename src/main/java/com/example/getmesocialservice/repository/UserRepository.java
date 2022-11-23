@@ -43,12 +43,23 @@ public class UserRepository {
         return null;
     }
 
+    public User getUserByEmail(String email) {
+        for(User user: userList){
+            if(user.getemail().equals(email)){
+                return user;
+            }
+        }
+        return null;
+    }
+
     public User updateUser(String id, User user) {
         for(User u:userList){
             if(u.getId().equals(id)){
                 u.setName(user.getName());
                 u.setemail(user.getemail());
                 u.setProfilePhotoUrl(user.getProfilePhotoUrl());
+
+                saveUser(u);
 
                 return u;
             }

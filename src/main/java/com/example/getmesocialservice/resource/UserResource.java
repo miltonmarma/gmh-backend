@@ -61,6 +61,11 @@ public class UserResource {
         return userService.getUserById(id);
     }
 
+    @GetMapping("/user/email")
+    public User getUserByEmail( String email){
+        return userService.getUserByEmail(email);
+    }
+
     @PutMapping("/user/{id}")
     public User updateUser(@PathVariable("id") String id, @RequestBody User user, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
     {

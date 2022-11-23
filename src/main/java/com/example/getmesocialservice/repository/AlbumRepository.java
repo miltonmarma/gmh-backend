@@ -39,19 +39,19 @@ public class AlbumRepository {
         return null;
     }
 
-//    public Album updateAlbum(int id, Album album) {
-//        for(Album a:albumList){
-//            if(a.getId() == id){
-//                a.setName(album.getName());
-//                a.setCreatedBy(album.getCreatedBy());
-//                a.setCoverPhotoUrl(album.getCoverPhotoUrl());
-//                a.setDateCreated(album.getDateCreated());
-//
-//                return a;
-//            }
-//        }
-//        return null;
-//    }
+    public Album updateAlbum(int id, Album album) {
+        for(Album a:albumList){
+            if(a.getid().equals(id)){
+                a.setName(album.getName());
+                a.setCreatedBy(album.getCreatedBy());
+                a.setCoverPhotoUrl(album.getCoverPhotoUrl());
+                a.setDateCreated(album.getDateCreated());
+
+                return a;
+            }
+        }
+        return null;
+    }
 
     public Album deleteAlbum(String albumId) {
         Album deletedAlbum = null;
