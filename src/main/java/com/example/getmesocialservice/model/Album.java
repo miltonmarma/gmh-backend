@@ -13,7 +13,7 @@ public class Album {
 
     @ValidCreatedBy
     private String createdBy;
-    private String coverPhotoUrl;
+    public String coverPhotoUrl;
     private String dateCreated;
 
     public Album(String id, String name, String createdBy, String coverPhotoUrl, String dateCreated) {

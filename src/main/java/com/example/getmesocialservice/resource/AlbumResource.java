@@ -35,6 +35,11 @@ public class AlbumResource {
         return albumService.getAllAlbums();
     }
 
+    @GetMapping("/album/{id}/photos")
+    public String getPhotosInAlbum(@PathVariable("id") String id){
+        return albumService.getPhotosInAlbum(id);
+    }
+
     @GetMapping("/album/{id}")
     public Album getAlbumById(@PathVariable("id") String id){
         return albumService.getAlbumById(id);

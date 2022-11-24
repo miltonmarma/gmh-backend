@@ -32,12 +32,21 @@ public class AlbumRepository {
 
     public Album getAlbumById(String id) {
         for(Album album: albumList){
-            if(album.getid() == id){
+            if(album.getid().equals(id)){
                 return album;
             }
         }
         return null;
     }
+    public String getPhotosInAlbum(String id) {
+        for(Album album: albumList){
+            if(album.getid().equals(id)){
+                return album.coverPhotoUrl;
+            }
+        }
+        return null;
+    }
+
 
     public Album updateAlbum(int id, Album album) {
         for(Album a:albumList){

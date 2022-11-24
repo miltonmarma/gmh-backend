@@ -33,4 +33,6 @@ public class AlbumService {
     public Album deleteAlbum(String id) {
        return albumRepository.deleteAlbum(id);
     }
+
+    public String getPhotosInAlbum(String id) { return albumRepository.getPhotosInAlbum(id);}
 }
