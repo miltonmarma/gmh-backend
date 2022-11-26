@@ -8,8 +8,12 @@ import java.util.List;
 
 @Repository
 public class PhotoRepository {
-
-    List<Photo> photoList = new ArrayList();
+    //(String id, String albumId, String photoUrl, String createdBy, String dateCreated)
+    List<Photo> photoList = new ArrayList<>(List.of(
+            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976"),
+            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004"),
+            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933")
+    ));
 
     public Photo getPhoto(){
         Photo photo = photoList.get(photoList.size()-1);

@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.service;
 
+import com.example.getmesocialservice.model.Photo;
 import com.example.getmesocialservice.model.Album;
 import org.springframework.web.bind.annotation.*;
 import com.example.getmesocialservice.repository.AlbumRepository;
@@ -34,5 +35,5 @@ public class AlbumService {
        return albumRepository.deleteAlbum(id);
     }
 
-    public String getPhotosInAlbum(String id) { return albumRepository.getPhotosInAlbum(id);}
+    public List<Photo> getPhotosInAlbum(String id) { return albumRepository.getPhotosInAlbum(id);}
 }

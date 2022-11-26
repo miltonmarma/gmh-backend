@@ -4,7 +4,7 @@ import com.example.getmesocialservice.validation.*;
 
 public class Photo {
     private String id;
-    private String albumId;
+    public String albumId;
     private String photoUrl;
     @ValidCreatedBy
     private String createdBy;

@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.repository;
 
+import com.example.getmesocialservice.model.Photo;
 import com.example.getmesocialservice.model.Album;
 import com.example.getmesocialservice.model.User;
 import org.springframework.stereotype.Repository;
@@ -10,10 +11,16 @@ import java.util.List;
 @Repository
 public class AlbumRepository {
 
+//    List<Photo> photoList = new ArrayList<>(List.of(
+//            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976"),
+//            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004"),
+//            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933")
+//    ));
+
     List<Album> albumList = new ArrayList<>(List.of(
-            new Album("1","Disco Tex", "Tex Cauffield", "https://www.placecage.com/g/200/300","1976"),
-            new Album("2","Disco Rex 2", "Rex Cauffield", "https://www.placecage.com/g/200/300","2004"),
-            new Album("3","Disco Lex 3", "Lex Luthor", "https://www.placecage.com/g/200/300","1933")
+            new Album("1","Disco Tex", "Tex Cauffield", null,"1976"),
+            new Album("2","Disco Rex 2", "Rex Cauffield", null,"2004"),
+            new Album("3","Disco Lex 3", "Lex Luthor", null,"1933")
     ));
 
     public Album getAlbum(){
@@ -27,6 +34,12 @@ public class AlbumRepository {
     }
 
     public List<Album> getAllAlbums() {
+        for(Album album: albumList){
+            for(Photo photo: album.coverPhotos){
+                photo.albumId = album.id;
+            }
+        }
+
         return albumList;
     }
 
@@ -38,10 +51,10 @@ public class AlbumRepository {
         }
         return null;
     }
-    public String getPhotosInAlbum(String id) {
+    public List<Photo> getPhotosInAlbum(String id) {
         for(Album album: albumList){
             if(album.getid().equals(id)){
-                return album.coverPhotoUrl;
+                return album.coverPhotos;
             }
         }
         return null;
@@ -53,7 +66,7 @@ public class AlbumRepository {
             if(a.getid().equals(id)){
                 a.setName(album.getName());
                 a.setCreatedBy(album.getCreatedBy());
-                a.setCoverPhotoUrl(album.getCoverPhotoUrl());
+                a.setCoverPhotos(album.getCoverPhotos());
                 a.setDateCreated(album.getDateCreated());
 
                 saveAlbum(a);

@@ -2,6 +2,7 @@ package com.example.getmesocialservice.resource;
 
 import com.example.getmesocialservice.Exception.exception;
 import com.example.getmesocialservice.model.Album;
+import com.example.getmesocialservice.model.Photo;
 import com.example.getmesocialservice.model.User;
 import com.example.getmesocialservice.model.firebaseUser;
 import com.google.firebase.auth.FirebaseAuthException;
@@ -36,7 +37,7 @@ public class AlbumResource {
     }
 
     @GetMapping("/album/{id}/photos")
-    public String getPhotosInAlbum(@PathVariable("id") String id){
+    public List<Photo> getPhotosInAlbum(@PathVariable("id") String id){
         return albumService.getPhotosInAlbum(id);
     }
 
