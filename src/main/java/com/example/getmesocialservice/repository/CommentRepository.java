@@ -17,7 +17,8 @@ public class CommentRepository {
     }
 
     public Comment saveComment(Comment comment) {
-        comment.setId(commentList.size() +1);
+
+        comment.setId(Integer.toString(commentList.size()+1));
         commentList.add(comment);
         return comment;
     }
@@ -28,7 +29,7 @@ public class CommentRepository {
 
     public Comment getCommentById(int id) {
         for( Comment comment: commentList){
-            if(comment.getId() == id){
+            if(comment.getId().equals(id)){
                 return comment;
             }
         }
@@ -39,7 +40,7 @@ public class CommentRepository {
         Comment deletedComment = null;
 
         for(Comment c:commentList){
-            if(c.getId() == id){
+            if(c.getId().equals(id)){
                 deletedComment = c;
                 commentList.remove(c);
                 return deletedComment;

@@ -2,6 +2,7 @@ package com.example.getmesocialservice.resource;
 
 import com.example.getmesocialservice.Exception.exception;
 import com.example.getmesocialservice.model.Photo;
+import com.example.getmesocialservice.model.Comment;
 import com.example.getmesocialservice.model.User;
 import com.example.getmesocialservice.model.firebaseUser;
 import com.example.getmesocialservice.service.FirebaseService;
@@ -58,5 +59,17 @@ public class PhotoResource {
             return photoService.deletePhoto(id);
         }
         return null;
+    }
+
+    @GetMapping("/photo/{id}/comments")
+    public List<Comment> getCommentsInPhoto(@PathVariable("id") String id) {
+        return photoService.getCommentsInPhoto(id);
+    }
+
+    @PostMapping("/photo/comment")
+    public Comment saveComment(@RequestBody @Valid Comment comment) {
+
+        return photoService.saveComment(comment);
+
     }
 }

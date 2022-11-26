@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.repository;
 
+import com.example.getmesocialservice.model.Comment;
 import com.example.getmesocialservice.model.Photo;
 import org.springframework.stereotype.Repository;
 
@@ -8,11 +9,15 @@ import java.util.List;
 
 @Repository
 public class PhotoRepository {
-    //(String id, String albumId, String photoUrl, String createdBy, String dateCreated)
+    List<Comment> commentListPlaceholder = new ArrayList<>(List.of(
+            new Comment("1","PhotoId1","First Message", "Pa Strong","Jan 22 2022"),
+            new Comment("2","PhotoId1","Second Message", "Pa Strong","Jan 23 2022"),
+            new Comment("3","PhotoId1","Third Message", "Baby Strong","Jan 29 2022")
+    ));
     List<Photo> photoList = new ArrayList<>(List.of(
-            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976"),
-            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004"),
-            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933")
+            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976",commentListPlaceholder),
+            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004",commentListPlaceholder),
+            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933",commentListPlaceholder)
     ));
 
     public Photo getPhoto(){
@@ -26,7 +31,14 @@ public class PhotoRepository {
         return photo;
     }
 
-    public List<Photo> getAllPhotos() {return photoList;}
+    public List<Photo> getAllPhotos() {
+        for(Photo photo: photoList) {
+            for (Comment comment : photo.comments) {
+                comment.photoId = photo.id;
+            }
+        }
+        return photoList;
+    }
 
     public Photo getPhotoById(String id) {
         for(Photo photo:photoList){
@@ -48,5 +60,21 @@ public class PhotoRepository {
             }
         }
         return deletedPhoto;
+    }
+
+    public Comment saveComment(Comment comment) {
+//        photo.setId(photoList.size() +1);
+        commentListPlaceholder.add(comment);
+        return comment;
+    }
+    public List<Comment> getCommentsInPhoto(String id) {
+
+        for(Photo photo: photoList) {
+            if(photo.getId().equals(id)){
+
+                return photo.comments;
+            }
+        }
+        return null;
     }
 }

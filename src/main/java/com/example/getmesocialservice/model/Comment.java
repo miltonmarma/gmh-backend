@@ -5,15 +5,15 @@ import com.example.getmesocialservice.validation.*;
 
 public class Comment {
 
-    private int id;
-    private int photoId;
+    public String id;
+    public String photoId;
 //    @Length(min=5)
     private String message;
     @ValidCreatedBy
     private String createdBy;
     private String dateCreated;
 
-    public Comment(int id, int photoId, String message, String createdBy, String dateCreated) {
+    public Comment(String id, String photoId, String message, String createdBy, String dateCreated) {
         this.id = id;
         this.photoId = photoId;
         this.message = message;
@@ -22,19 +22,19 @@ public class Comment {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public int getPhotoId() {
+    public String getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(int photoId) {
+    public void setPhotoId(String photoId) {
         this.photoId = photoId;
     }
 

@@ -1,5 +1,6 @@
 package com.example.getmesocialservice.service;
 
+import com.example.getmesocialservice.model.Comment;
 import com.example.getmesocialservice.model.Photo;
 import com.example.getmesocialservice.repository.PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,11 @@ public class PhotoService {
 
     public Photo deletePhoto(String id) {
         return photoRepository.deletePhoto(id);
+    }
+
+    public List<Comment> getCommentsInPhoto(String id) { return photoRepository.getCommentsInPhoto(id);}
+
+    public Comment saveComment(Comment comment) {
+        return photoRepository.saveComment(comment);
     }
 }
