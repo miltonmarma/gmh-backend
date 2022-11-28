@@ -42,7 +42,7 @@ public class PhotoRepository {
 
     public Photo getPhotoById(String id) {
         for(Photo photo:photoList){
-            if(photo.getId() == id){
+            if(photo.getId().equals(id)){
                 return photo;
             }
         }
