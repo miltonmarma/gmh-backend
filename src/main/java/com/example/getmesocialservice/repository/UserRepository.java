@@ -79,4 +79,18 @@ public class UserRepository {
         }
         return deletedUser;
     }
+
+    public User setProfilePhoto(String id, String profilePhoto)
+    {
+        for(User u:userList){
+            if(u.getId().equals(id)){
+                u.setProfilePhotoUrl(profilePhoto);
+
+                return u;
+            }
+        }
+        return null;
+
+
+    }
 }

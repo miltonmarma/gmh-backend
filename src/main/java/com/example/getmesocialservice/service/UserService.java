@@ -40,4 +40,6 @@ public class UserService {
     public User deleteUser(int id) {
         return userRepository.deleteUser(id);
     }
+
+    public User setProfilePhoto(String id, String profilePhoto){ return userRepository.setProfilePhoto(id, profilePhoto); }
 }

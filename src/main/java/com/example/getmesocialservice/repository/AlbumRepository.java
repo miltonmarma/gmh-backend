@@ -16,11 +16,13 @@ public class AlbumRepository {
 //            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004"),
 //            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933")
 //    ));
+//
+//C/O https://placeholder.com/#How_To_Use_Our_Placeholders
 
     List<Album> albumList = new ArrayList<>(List.of(
-            new Album("1","Disco Tex", "Tex Cauffield", null,"1976"),
-            new Album("2","Disco Rex 2", "Rex Cauffield", null,"2004"),
-            new Album("3","Disco Lex 3", "Lex Luthor", null,"1933")
+            new Album("1","Disco Tex", "Tex Cauffield", null,"1976","https://via.placeholder.com/150"),
+            new Album("2","Disco Rex 2", "Rex Cauffield", null,"2004","https://via.placeholder.com/150"),
+            new Album("3","Disco Lex 3", "Lex Luthor", null,"1933","https://via.placeholder.com/150")
     ));
 
     public Album getAlbum(){
@@ -61,19 +63,18 @@ public class AlbumRepository {
     }
 
 
-    public Album updateAlbum(int id, Album album) {
+    public Album setAlbumPhoto(String id, String albumPhoto)
+    {
         for(Album a:albumList){
             if(a.getid().equals(id)){
-                a.setName(album.getName());
-                a.setCreatedBy(album.getCreatedBy());
-                a.setCoverPhotos(album.getCoverPhotos());
-                a.setDateCreated(album.getDateCreated());
+                a.setAlbumPhoto(albumPhoto);
 
-                saveAlbum(a);
                 return a;
             }
         }
         return null;
+
+
     }
 
     public Album deleteAlbum(String albumId) {
@@ -89,4 +90,6 @@ public class AlbumRepository {
         }
         return deletedAlbum;
     }
+
+
 }

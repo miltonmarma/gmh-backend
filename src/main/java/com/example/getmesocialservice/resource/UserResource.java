@@ -87,4 +87,15 @@ public class UserResource {
         }
         return null;
     }
+
+    @PutMapping("/user/me/profilePhoto")
+    public void updateUserProfile(String id, @RequestBody String profilePhotoUrl, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
+    {
+        firebaseUser firebaseUser = firebaseService.authenticate(idToken);
+
+        if(firebaseUser != null) {
+            userService.setProfilePhoto(id, profilePhotoUrl);
+        }
+
+    }
 }

@@ -36,4 +36,7 @@ public class AlbumService {
     }
 
     public List<Photo> getPhotosInAlbum(String id) { return albumRepository.getPhotosInAlbum(id);}
+
+    public Album setAlbumPhoto(String id, String albumPhoto){ return albumRepository.setAlbumPhoto(id, albumPhoto); }
+
 }

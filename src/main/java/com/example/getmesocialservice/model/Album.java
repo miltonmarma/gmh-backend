@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Album {
 
+    public String albumPhoto;
     public String id;
 //    @Length(max = 10)
     private String name;
@@ -23,12 +24,13 @@ public class Album {
             new Photo("2",id,"www.placecage.com/400/400", "Rex Cauffield","2004",null),
             new Photo("3",id,"www.placecage.com/300/300", "Lex Luthor","1933",null)
     ));
-    public Album(String id, String name, String createdBy, List<Photo> coverPhotos, String dateCreated) {
+    public Album(String id, String name, String createdBy, List<Photo> coverPhotos, String dateCreated, String albumPhoto) {
         this.id = id;
         this.name = name;
         this.createdBy = createdBy;
         this.coverPhotos = photoListPlaceholder;
         this.dateCreated = dateCreated;
+        this.albumPhoto = albumPhoto;
     }
 
     public String getCreatedBy() {
@@ -69,5 +71,13 @@ public class Album {
 
     public void setCoverPhotos(List<Photo> coverPhotos) {
         this.coverPhotos = coverPhotos;
+    }
+
+    public String getAlbumPhoto() {
+        return albumPhoto;
+    }
+
+    public void setAlbumPhoto(String albumPhoto) {
+        this.albumPhoto = albumPhoto;
     }
 }

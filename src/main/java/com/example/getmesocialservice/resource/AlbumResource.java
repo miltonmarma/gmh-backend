@@ -68,4 +68,11 @@ public class AlbumResource {
         }
         return null;
     }
+    @PutMapping("/album/coverPhoto")
+    public void setAlbumPhoto(String id, @RequestBody String albumPhoto )
+    {
+
+            albumService.setAlbumPhoto(id, albumPhoto);
+
+    }
 }

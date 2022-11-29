@@ -20,7 +20,7 @@ class AlbumServiceTests {
 
     @Before
     public void saveAlbum(){
-        albumService.saveAlbum(new Album("1","Tom","Tom",null,"Now"));
+        albumService.saveAlbum(new Album("1","Tom","Tom",null,"Now","https://via.placeholder.com/200"));
     }
 
     @Test
