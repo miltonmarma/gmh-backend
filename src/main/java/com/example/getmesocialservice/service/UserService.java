@@ -41,5 +41,5 @@ public class UserService {
         return userRepository.deleteUser(id);
     }
 
-    public User setProfilePhoto(String id, String profilePhoto){ return userRepository.setProfilePhoto(id, profilePhoto); }
+    public User setProfilePhoto(String profilePhoto){ return userRepository.setProfilePhoto(profilePhoto); }
 }

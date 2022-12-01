@@ -89,12 +89,12 @@ public class UserResource {
     }
 
     @PutMapping("/user/me/profilePhoto")
-    public void updateUserProfile(String id, @RequestBody String profilePhotoUrl, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
+    public void updateUserProfile(@RequestBody String profilePhotoUrl, @RequestHeader(name ="idToken") String idToken ) throws exception,FirebaseAuthException, IOException
     {
         firebaseUser firebaseUser = firebaseService.authenticate(idToken);
 
         if(firebaseUser != null) {
-            userService.setProfilePhoto(id, profilePhotoUrl);
+            userService.setProfilePhoto(profilePhotoUrl);
         }
 
     }
