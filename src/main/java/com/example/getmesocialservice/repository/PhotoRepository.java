@@ -15,9 +15,9 @@ public class PhotoRepository {
             new Comment("3","PhotoId1","Third Message", "Baby Strong","Jan 29 2022")
     ));
     List<Photo> photoList = new ArrayList<>(List.of(
-            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976",commentListPlaceholder),
-            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004",commentListPlaceholder),
-            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933",commentListPlaceholder)
+            new Photo("1","AlbumId1","www.picsum.photos/200/300", "Tex Cauffield","1976",commentListPlaceholder),
+            new Photo("2","AlbumId2","www.picsum.photos/400/400", "Rex Cauffield","2004",commentListPlaceholder),
+            new Photo("3","AlbumId3","www.picsum.photos/300/300", "Lex Luthor","1933",commentListPlaceholder)
     ));
 
     public Photo getPhoto(){

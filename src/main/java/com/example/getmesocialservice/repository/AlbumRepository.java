@@ -12,9 +12,9 @@ import java.util.List;
 public class AlbumRepository {
 
 //    List<Photo> photoList = new ArrayList<>(List.of(
-//            new Photo("1","AlbumId1","www.placecage.com/200/300", "Tex Cauffield","1976"),
-//            new Photo("2","AlbumId2","www.placecage.com/400/400", "Rex Cauffield","2004"),
-//            new Photo("3","AlbumId3","www.placecage.com/300/300", "Lex Luthor","1933")
+//            new Photo("1","AlbumId1","www.picsum.photos/200/300", "Tex Cauffield","1976"),
+//            new Photo("2","AlbumId2","www.picsum.photos/400/400", "Rex Cauffield","2004"),
+//            new Photo("3","AlbumId3","www.picsum.photos/300/300", "Lex Luthor","1933")
 //    ));
 //
 //C/O https://placeholder.com/#How_To_Use_Our_Placeholders
