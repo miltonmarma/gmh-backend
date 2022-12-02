@@ -69,10 +69,10 @@ public class AlbumResource {
         return null;
     }
     @PutMapping("/album/coverPhoto")
-    public void setAlbumPhoto(@RequestParam(name= "albumPhoto") String albumPhoto )
+    public void setAlbumPhoto(@RequestParam(name= "albumPhoto") String albumPhoto, String albumId )
     {
 
-            albumService.setAlbumPhoto(albumPhoto);
+            albumService.setAlbumPhoto(albumPhoto, albumId);
 
     }
 }

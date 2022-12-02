@@ -20,9 +20,9 @@ public class AlbumRepository {
 //C/O https://placeholder.com/#How_To_Use_Our_Placeholders
 
     List<Album> albumList = new ArrayList<>(List.of(
-            new Album("1","Disco Tex", "Tex Cauffield", null,"1976","https://via.placeholder.com/150"),
-            new Album("2","Disco Rex 2", "Rex Cauffield", null,"2004","https://via.placeholder.com/150"),
-            new Album("3","Disco Lex 3", "Lex Luthor", null,"1933","https://via.placeholder.com/150")
+            new Album("1","Disco Tex", "Tex Cauffield", null,"1976","www.via.placeholder.com/150"),
+            new Album("2","Disco Rex 2", "Rex Cauffield", null,"2004","www.via.placeholder.com/150"),
+            new Album("3","Disco Lex 3", "Lex Luthor", null,"1933","www.via.placeholder.com/150")
     ));
 
     public Album getAlbum(){
@@ -63,11 +63,18 @@ public class AlbumRepository {
     }
 
 
-    public Album setAlbumPhoto(String albumPhoto)
+    public Album setAlbumPhoto(String albumPhoto, String albumId)
     {
-        Album a = getAlbum();
-        a.setAlbumPhoto(albumPhoto);
-        return a;
+
+        for(Album a:albumList){
+            if(a.getid().equals(albumId)){
+                a.setAlbumPhoto(albumPhoto);
+                return a;
+            }
+
+        }
+
+        return null;
     }
 
     public Album deleteAlbum(String albumId) {
