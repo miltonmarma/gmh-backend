@@ -89,7 +89,7 @@ public class UserResource {
     }
 
     @PutMapping("/user/me/profilePhoto")
-    public void updateUserProfile(@RequestBody String profilePhotoUrl )
+    public void updateUserProfile(@RequestParam(name= "profilePhotoUrl") String profilePhotoUrl )
     {
             userService.setProfilePhoto(profilePhotoUrl);
     }
