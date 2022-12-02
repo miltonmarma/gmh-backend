@@ -63,18 +63,11 @@ public class AlbumRepository {
     }
 
 
-    public Album setAlbumPhoto(String id, String albumPhoto)
+    public Album setAlbumPhoto(String albumPhoto)
     {
-        for(Album a:albumList){
-            if(a.getid().equals(id)){
-                a.setAlbumPhoto(albumPhoto);
-
-                return a;
-            }
-        }
-        return null;
-
-
+        Album a = getAlbum();
+        a.setAlbumPhoto(albumPhoto);
+        return a;
     }
 
     public Album deleteAlbum(String albumId) {
