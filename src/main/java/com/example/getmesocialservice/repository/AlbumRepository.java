@@ -65,13 +65,11 @@ public class AlbumRepository {
 
     public Album setAlbumPhoto(String albumPhoto, String albumId)
     {
-
         for(Album a:albumList){
             if(a.getid().equals(albumId)){
                 a.setAlbumPhoto(albumPhoto);
                 return a;
             }
-
         }
 
         return null;
