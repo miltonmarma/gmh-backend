@@ -9,16 +9,16 @@ import java.util.List;
 
 @Repository
 public class PhotoRepository {
-//    List<Comment> commentListPlaceholder = new ArrayList<>(List.of(
-//            new Comment("1","PhotoId1","First Message", "Pa Strong","Jan 22 2022"),
-//            new Comment("2","PhotoId1","Second Message", "Pa Strong","Jan 23 2022"),
-//            new Comment("3","PhotoId1","Third Message", "Baby Strong","Jan 29 2022")
-//    ));
-//    List<Photo> photoList = new ArrayList<>(List.of(
-//            new Photo("1","AlbumId1","www.picsum.photos/200/300", "Tex Cauffield","1976",commentListPlaceholder),
-//            new Photo("2","AlbumId2","www.picsum.photos/400/400", "Rex Cauffield","2004",commentListPlaceholder),
-//            new Photo("3","AlbumId3","www.picsum.photos/300/300", "Lex Luthor","1933",commentListPlaceholder)
-//    ));
+    List<Comment> commentListPlaceholder = new ArrayList<>(List.of(
+            new Comment("1","1","First Message", "Pa Strong","Jan 22 2022"),
+            new Comment("2","1","Second Message", "Pa Strong","Jan 23 2022"),
+            new Comment("3","1","Third Message", "Baby Strong","Jan 29 2022")
+    ));
+    List<Photo> photoList = new ArrayList<>(List.of(
+            new Photo("1","1","www.picsum.photos/200/300", "Tex Cauffield","1976",commentListPlaceholder),
+            new Photo("2","1","www.picsum.photos/400/400", "Rex Cauffield","2004",commentListPlaceholder),
+            new Photo("3","1","www.picsum.photos/300/300", "Lex Luthor","1933",commentListPlaceholder)
+    ));
 
     public Photo getPhoto(){
         Photo photo = photoList.get(photoList.size()-1);
