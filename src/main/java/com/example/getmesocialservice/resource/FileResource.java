@@ -9,6 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import com.example.getmesocialservice.model.imageFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,8 +21,8 @@ public class FileResource {
     @Autowired
     private FileService fileService;
 
-    @PostMapping
-    public boolean upload(@RequestParam(name = "file") MultipartFile file){
+    @PostMapping("/upload")
+    public imageFile upload(@RequestParam(name = "file") MultipartFile file){
 
         return fileService.upload(file);
     }

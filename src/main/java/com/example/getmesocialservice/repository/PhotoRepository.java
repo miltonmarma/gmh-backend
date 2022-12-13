@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//extends MongoRepository<UserEntity, String>
 @Repository
-public class PhotoRepository {
+public class PhotoRepository  {
     List<Comment> commentListPlaceholder = new ArrayList<>(List.of(
             new Comment("1","1","First Message", "Pa Strong","Jan 22 2022"),
             new Comment("2","1","Second Message", "Pa Strong","Jan 23 2022"),
