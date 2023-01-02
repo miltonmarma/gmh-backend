@@ -23,6 +23,7 @@ import com.mongodb.client.model.Filters;
 import java.io.IOException;
 import java.util.Date;
 
+
 @Service
 public class FileService {
     public imageFile upload(MultipartFile file) {
@@ -41,7 +42,9 @@ public class FileService {
 
             MongoClient client = MongoClients.create("mongodb+srv://TomMilton:Hiccups123@cluster0.zuodxrk.mongodb.net/?retryWrites=true&w=majority");
 
-            //DB db = mongoClient.getDB("GMH_Frontend_A7\n" + ".GMH_Frontend_A7");
+            MongoDatabase database = client.getDatabase("GMH_Frontend_A7");
+            //database.add(uploadedFile);
+
 
             return uploadedFile;
 

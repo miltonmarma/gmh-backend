@@ -14,6 +14,7 @@ import com.example.getmesocialservice.model.imageFile;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/files")
 public class FileResource {
